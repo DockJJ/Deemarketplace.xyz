@@ -9,6 +9,42 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .testimonials-text .testimonial-disclaimer {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 2rem;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .testimonial-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 14px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    .testimonial-card .t-stars {
+      color: #f5a623;
+      letter-spacing: 2px;
+      margin-bottom: 0.6rem;
+    }
+    .testimonial-card .t-quote {
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: #333;
+      margin-bottom: 0.9rem;
+    }
+    .testimonial-card .t-author {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
 
@@ -31,7 +67,7 @@
       <div class="hero-copy">
         <p class="eyebrow">⚠️ Attention women who wear shoes every day</p>
         <h1>End the burning.<br /><span class="accent">Kill the pressure.</span></h1>
-        <p class="hero-sub">Walk as far as you want, for as long as you want — in the shoes you actually love.</p>
+        <p class="hero-sub">Walk as far as you want, for as long as you want — in the shoes you truly love.</p>
 
         <div class="rating-row">
           <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
@@ -71,9 +107,9 @@
   <section class="section story">
     <div class="container narrow">
       <h2>You know that moment.</h2>
-      <p>You're at a wedding. A work event. Just standing in a shop. And suddenly, your forefoot is <strong>on fire</strong>. You shift your weight. You grimace. You look for the nearest chair.</p>
-      <p class="pull">And you think: <em>"Is this just my life now?"</em></p>
-      <p class="big-no">No. It's not.</p>
+      <p>You're at a wedding. A party. Just standing at your shop. And suddenly, your forefoot starts burning like fire. You shift your weight slightly. You try to hide the pain on your face. You start looking for somewhere to sit.</p>
+      <p class="pull">And you think: <em>"Is this just how my life is going to be?"</em></p>
+      <p class="big-no">No. It shouldn't be this way.</p>
 
       <!-- 🖼️ IMAGE SLOT 2: LIFESTYLE / PAIN SHOT -->
       <img class="content-img" src="139140.png" alt="Woman removing painful heels at an event" />
@@ -83,32 +119,32 @@
   <!-- ============ INTERACTIVE CHECKLIST ============ -->
   <section class="section checklist-section">
     <div class="container narrow">
-      <h2>Tick every one that sounds like you 👇</h2>
+      <h2>Check everything that sounds like you 👇</h2>
       <div class="checklist" id="painChecklist">
-        <label class="check-item"><input type="checkbox" /><span class="box"></span><span class="check-text">Your shoes feel fine in the morning — and unbearable by noon</span></label>
-        <label class="check-item"><input type="checkbox" /><span class="box"></span><span class="check-text">You've stopped wearing heels you actually love</span></label>
-        <label class="check-item"><input type="checkbox" /><span class="box"></span><span class="check-text">You wince going down stairs because your forefoot takes the hit</span></label>
-        <label class="check-item"><input type="checkbox" /><span class="box"></span><span class="check-text">You've tried insoles before — they bunched up, slipped, or felt like wearing a mattress</span></label>
-        <label class="check-item"><input type="checkbox" /><span class="box"></span><span class="check-text">You're buying "comfort shoes" that don't match a single outfit you own</span></label>
+        <label class="check-item"><input type="checkbox" /><span class="box"></span><span class="check-text">Your shoes feel fine in the morning — but by afternoon, they've become a problem</span></label>
+        <label class="check-item"><input type="checkbox" /><span class="box"></span><span class="check-text">You've stopped wearing the heels you used to love</span></label>
+        <label class="check-item"><input type="checkbox" /><span class="box"></span><span class="check-text">You wince every time you walk down stairs because your forefoot is carrying the load</span></label>
+        <label class="check-item"><input type="checkbox" /><span class="box"></span><span class="check-text">You've tried insoles before — they bunch up, they slide, they feel like a mattress in your shoe</span></label>
+        <label class="check-item"><input type="checkbox" /><span class="box"></span><span class="check-text">You keep buying "comfort shoes" that don't match a single outfit in your wardrobe</span></label>
       </div>
-      <p class="checklist-result" id="checklistResult">If you ticked even 2 of these — your forefoot is screaming for help.</p>
+      <p class="checklist-result" id="checklistResult">If you checked even 2 of these — your forefoot is crying out for help.</p>
     </div>
   </section>
 
   <!-- ============ STOP WASTING MONEY ============ -->
   <section class="section wrong-things">
     <div class="container narrow">
-      <h2>⚠️ STOP spending money on the wrong things</h2>
+      <h2>⚠️ STOP wasting money on the wrong things</h2>
       <div class="wrong-grid">
-        <div class="wrong-card"><h3>Podiatrist visits</h3><p>Expensive, temporary relief</p></div>
-        <div class="wrong-card"><h3>"Cushioned" shoes</h3><p>Cost ₦70,000+ and still hurt</p></div>
-        <div class="wrong-card"><h3>Thick insoles</h3><p>Visible in open shoes, slide around, trap heat</p></div>
-        <div class="wrong-card"><h3>Painkillers</h3><p>Masking the problem, not solving it</p></div>
+        <div class="wrong-card"><h3>Podiatrist visit</h3><p>It costs money, and relief doesn't last past 2 days</p></div>
+        <div class="wrong-card"><h3>"Comfort" shoes</h3><p>You'll pay ₦70,000+ and it still hurts</p></div>
+        <div class="wrong-card"><h3>Thick insoles</h3><p>It shows through open shoes, it slides, and it's hot</p></div>
+        <div class="wrong-card"><h3>Painkillers</h3><p>You're masking the wound, not solving it</p></div>
       </div>
       <div class="cause-fix">
-        <p>These don't work because they fight the <strong>symptom</strong>, not the <strong>cause</strong>.</p>
-        <p>The cause is <strong>pressure, friction, and zero cushioning</strong> at the ball of your foot.</p>
-        <p class="fix-line">The fix is targeted forefoot protection — <span class="accent">soft, slim, and invisible.</span></p>
+        <p>None of this works because they're fighting the <strong>symptom</strong>, not the <strong>cause</strong>.</p>
+        <p>The real cause is <strong>pressure, friction and zero cushioning</strong> at the ball of your foot.</p>
+        <p class="fix-line">The correct fix is targeted forefoot protection — <span class="accent">soft, slim, and completely invisible.</span></p>
       </div>
     </div>
   </section>
@@ -119,7 +155,7 @@
       <p class="eyebrow center">Introducing</p>
       <h2 class="center xl">The Forefoot Comfort Pad</h2>
       <p class="tagline center">Soft. Slim. Invisible. All-Day Relief.</p>
-      <p class="center narrow-p">Not a bulky insole. Not a bandage. A slim, breathable sleeve that sits over your forefoot and takes the punishment — so your skin doesn't have to.</p>
+      <p class="center narrow-p">It's not a bulky insole. It's not a bandage. It's a slim, breathable sleeve that sits on your forefoot and absorbs the punishment — so your skin doesn't have to.</p>
 
       <!-- 🎬 VIDEO SLOT 1: PRODUCT DEMO (how to wear it / how it works) -->
       <video class="content-video" controls playsinline poster="158825.mp4">
@@ -130,22 +166,22 @@
         <div class="feature">
           <span class="feature-icon">🌬️</span>
           <h3>Breathable Comfort</h3>
-          <p>Vent holes circulate air so your feet stay cool and fresh — even after 10 hours on your feet.</p>
+          <p>Vent holes let air pass through so your feet stay cool and fresh — even after 10 hours on your feet.</p>
         </div>
         <div class="feature">
           <span class="feature-icon">🪶</span>
           <h3>Soft &amp; Cushioned Protection</h3>
-          <p>Gentle padding absorbs pressure and friction at the most vulnerable point of your foot — the ball — so every step lands softer.</p>
+          <p>Gentle padding absorbs pressure and friction at the most sensitive part of your foot — the ball — so every step lands softly.</p>
         </div>
         <div class="feature">
           <span class="feature-icon">📌</span>
           <h3>Stays In Place All Day</h3>
-          <p>Lightweight and flexible. Moves with your foot. Won't bunch, slip, or roll — even in heels.</p>
+          <p>Light and flexible. It moves with your foot. It won't bunch up, it won't slide — even in heels.</p>
         </div>
         <div class="feature">
           <span class="feature-icon">👠</span>
           <h3>Perfect For Every Shoe</h3>
-          <p>Heels? Yes. Flats? Yes. Sandals? Open-toe shoes? All of them. One solution for your entire wardrobe.</p>
+          <p>Heels? Yes. Flats? Yes. Sandals? Open-toe? All of them. One solution for your entire wardrobe.</p>
         </div>
       </div>
 
@@ -161,7 +197,7 @@
   <!-- ============ RELIEF TABLE ============ -->
   <section class="section relief">
     <div class="container narrow">
-      <h2>What it relieves</h2>
+      <h2>What It Relieves</h2>
 
       <!-- 🖼️ IMAGE SLOT 6: PRODUCT CLOSE-UP / DETAIL SHOT -->
       <img class="content-img" src="139138.png" alt="Close-up of the breathable vent holes and soft padding" />
@@ -171,9 +207,9 @@
           <tr><th>Problem</th><th>What Happens</th></tr>
         </thead>
         <tbody>
-          <tr><td>Shoes too tight</td><td>Pressure redistributed away from pressure points</td></tr>
-          <tr><td>Chafing &amp; rubbing</td><td>Friction barrier between foot and shoe</td></tr>
-          <tr><td>Forefoot pain</td><td>Cushioning absorbs impact all day</td></tr>
+          <tr><td>Shoes that are too tight</td><td>Pressure is spread away from the pressure points</td></tr>
+          <tr><td>Chafing &amp; rubbing</td><td>Creates a friction barrier between your foot and the shoe</td></tr>
+          <tr><td>Forefoot pain</td><td>Cushioning absorbs the impact all day long</td></tr>
         </tbody>
       </table>
     </div>
@@ -186,27 +222,73 @@
       <div class="timeline">
         <div class="tl-item">
           <div class="tl-marker">Day 1–3</div>
-          <p>You notice you're not shifting your weight awkwardly anymore.</p>
+          <p>You'll notice you're no longer shifting your weight around.</p>
         </div>
         <div class="tl-item">
           <div class="tl-marker">Week 1</div>
-          <p>The burning at lunch? Gone. You make it through the day.</p>
+          <p>That afternoon burning that used to bother you? It's gone. You'll actually enjoy your day.</p>
         </div>
         <div class="tl-item">
           <div class="tl-marker">Week 2</div>
-          <p>You put on heels you haven't worn in months.</p>
+          <p>You'll wear those heels that have been sitting in your wardrobe for months.</p>
         </div>
         <div class="tl-item">
           <div class="tl-marker">Week 3</div>
-          <p>Someone asks why you look so confident walking. You smile and say nothing.</p>
+          <p>Someone will ask why you're walking with such confidence. You'll just smile and say nothing.</p>
         </div>
       </div>
 
       <div class="summary-block">
-        <p><strong>Real relief.</strong> No surgery. No expensive shoes. No suffering.</p>
+        <p><strong>Real relief.</strong> No surgery. No expensive shoes. No unnecessary struggle.</p>
         <p>One small pad. Four big problems solved.</p>
         <p class="four-words">Pressure. Friction. Chafing. Pain.</p>
-        <p class="accent"><strong>Comfort you feel. Confidence you wear.</strong></p>
+        <p class="accent"><strong>Comfort you'll feel. Confidence you'll wear.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section testimonials-text">
+    <div class="container narrow">
+      <h2 class="center">What Nigerian Women Are Saying</h2>
+      <p class="center testimonial-disclaimer">Sample customer feedback below — swap these for your verified reviews before this page goes live.</p>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"I've been dealing with burning feet since my wedding. I've worn this pad for two weeks and honestly, I'd forgotten what it felt like for my legs not to hurt like that. It doesn't show at all in my heels."</p>
+          <p class="t-author">— Chiamaka O., Lagos</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"My job requires me to stand for long hours every day. Before, by 2pm my forefoot would already be screaming. Now I can close for the evening without any trouble. This is the real deal."</p>
+          <p class="t-author">— Halima B., Abuja</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★☆</div>
+          <p class="t-quote">"I've tried three different insoles before this, and all of them kept sliding out of my shoe. This one stays put. The only thing I'd add — I wish it came in more colors, but the comfort is unmatched."</p>
+          <p class="t-author">— Ifeoma A., Port Harcourt</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"I bought this for my mother, who's been complaining about leg pain for years whenever she wears her church shoes. She called me the following Sunday to thank me. That alone made it worth it."</p>
+          <p class="t-author">— Damilola F., Ibadan</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"I was skeptical at first — how could such a small pad solve such big pain? But it surprised me. My open-toe sandals, which I'd almost thrown away, have become my favorites again."</p>
+          <p class="t-author">— Blessing E., Benin City</p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"Delivery reached me in three days, and pay-on-delivery made me trust it right away. Now it's my go-to for any event where I need to stand for a long time. It's literally saved my feet."</p>
+          <p class="t-author">— Amaka N., Enugu</p>
+        </div>
       </div>
     </div>
   </section>
@@ -214,7 +296,7 @@
   <!-- ============ TESTIMONIAL VIDEO ============ -->
   <section class="section testimonial-video">
     <div class="container narrow">
-      <h2 class="center">Hear it from women like you</h2>
+      <h2 class="center">Hear It From Women Like You</h2>
 
       <!-- 🎬 VIDEO SLOT 2: CUSTOMER TESTIMONIAL / UGC VIDEO -->
       <video class="content-video" controls playsinline poster="139860.png">
@@ -228,16 +310,16 @@
     <div class="container narrow guarantee-card">
       <span class="shield">🛡️</span>
       <h2>Try It Risk-Free</h2>
-      <p>Use it for 30 days. If your feet don't feel dramatically better — return it. No awkward conversations. No stress.</p>
-      <p class="g-sub">We can promise this because we know: the only people who don't feel the difference are the ones who never try.</p>
+      <p>Use it for 30 days. If your feet don't feel significantly better — return it. No awkward conversation. No stress.</p>
+      <p class="g-sub">We can make this promise because we know: only the people who never try it are the ones who never feel the difference.</p>
     </div>
   </section>
 
   <!-- ============ BUNDLES + ORDER FORM ============ -->
   <section class="section order-section" id="order">
     <div class="container">
-      <h2 class="center">You have two choices right now.</h2>
-      <p class="center choices-sub">Keep enduring the pain… or fix it today for less than the cost of one "comfort shoe."</p>
+      <h2 class="center">You have two choices now.</h2>
+      <p class="center choices-sub">Keep managing the pain… or fix it today for less than the price of one "comfort shoe."</p>
 
       <div class="price-line center">
         <span class="sale-price">₦24,000</span>
@@ -245,7 +327,7 @@
         <span class="save-tag">SAVE 37%</span>
       </div>
 
-      <h3 class="center bundle-heading">🎁 Buy in bulk and get a discount!</h3>
+      <h3 class="center bundle-heading">🎁 Buy more, save more!</h3>
 
       <div class="bundles" id="bundles">
         <button type="button" class="bundle" data-bundle="Buy 2 pairs get 1 pair FREE — ₦24,000">
@@ -271,8 +353,8 @@
 
       <!-- ORDER FORM -->
       <div class="form-wrap">
-        <h3 class="form-title">📦 Fill this form to place your order</h3>
-        <p class="form-sub">Pay on delivery. We'll call you to confirm before shipping.</p>
+        <h3 class="form-title">📦 Fill out this form so we can process your order</h3>
+        <p class="form-sub">Pay on delivery. We'll call to confirm before we ship it.</p>
 
         <form id="orderForm" novalidate>
           <div class="field">
@@ -334,7 +416,7 @@
             ✅ Place My Order — Pay On Delivery
           </button>
 
-          <p class="form-secure">🔒 Your details are safe. We only use them to deliver your order.</p>
+          <p class="form-secure">🔒 Your details are safe. We'll only use them to deliver your order.</p>
 
           <div class="form-message" id="formMessage" role="alert"></div>
         </form>
