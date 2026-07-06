@@ -183,6 +183,11 @@
               b.getAttribute("data-bundle") === bundleSelect.value
             );
           });
+          
+          // Redirect to thank you page after 2 seconds
+          setTimeout(function () {
+            window.location.href = "/Thankyou/";
+          }, 2000);
         })
         .catch(function () {
           showMessage(
