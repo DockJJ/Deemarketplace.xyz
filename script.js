@@ -176,7 +176,7 @@
           );
           form.reset();
           // Restore default bundle selection after reset
-          bundleSelect.value = "Buy 4 pairs get 2 pairs FREE — ₦43,200 (Save 10%)";
+          bundleSelect.value = "Buy 2 pairs — ₦19,500 (Save ₦14,500)";
           bundleButtons.forEach(function (b) {
             b.classList.toggle(
               "selected",
@@ -186,7 +186,7 @@
           
           // Redirect to thank you page after 2 seconds
           setTimeout(function () {
-            window.location.href = "/Thankyou/";
+            window.location.href = window.location.origin + "/Thankyou/";
           }, 2000);
         })
         .catch(function () {
