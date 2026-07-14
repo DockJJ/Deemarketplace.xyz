@@ -470,6 +470,290 @@
     line-height:1.6;
   }
 
+  /* ---------- PRICE LIST ---------- */
+  .pricing{
+    padding:clamp(60px,9vw,110px) 0;
+    background:var(--paper);
+    border-top:1px solid var(--line);
+  }
+  .pricing > .wrap > .eyebrow{ display:block; text-align:center; }
+  .pricing h2{
+    text-align:center;
+    font-size:clamp(1.9rem,3.4vw,2.5rem);
+    margin:12px auto 10px;
+  }
+  .pricing > .wrap > p.sub{
+    text-align:center;
+    color:#4A5A4E;
+    max-width:50ch;
+    margin:0 auto 46px;
+  }
+  .price-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:26px;
+  }
+  .price-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    transition:transform .3s ease, box-shadow .3s ease;
+  }
+  .price-card.popular{
+    border:2px solid var(--clay);
+    transform:translateY(-8px);
+  }
+  .price-card:hover{ box-shadow:0 24px 44px -26px rgba(30,51,39,0.4); }
+  .price-card .badge{
+    position:absolute;
+    top:16px; right:16px;
+    background:var(--clay);
+    color:#fff;
+    font-size:0.7rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    padding:6px 12px;
+    border-radius:999px;
+    z-index:2;
+  }
+  .price-card .img-space{
+    aspect-ratio:1/1;
+    background:
+      repeating-linear-gradient(45deg, rgba(30,51,39,0.05) 0 10px, transparent 10px 20px),
+      var(--sage-light);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--forest);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    text-align:center;
+    padding:16px;
+    border-bottom:1px solid var(--line);
+  }
+  .price-card .body{
+    padding:24px 22px 28px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+  .price-card h3{
+    font-size:1.2rem;
+    margin-bottom:6px;
+  }
+  .price-card .unit-price{
+    font-size:0.85rem;
+    color:var(--sage);
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  .price-card .amount{
+    font-family:'Fraunces',serif;
+    font-size:2.2rem;
+    color:var(--forest);
+    margin-bottom:4px;
+  }
+  .price-card .save{
+    font-size:0.82rem;
+    color:var(--clay);
+    font-weight:700;
+    margin-bottom:18px;
+    min-height:1.2em;
+  }
+  .price-card .select-btn{
+    margin-top:auto;
+    width:100%;
+    border:1.5px solid var(--forest);
+    background:transparent;
+    color:var(--forest);
+    font-family:inherit;
+    font-weight:700;
+    font-size:0.92rem;
+    padding:13px 18px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:background .25s ease, color .25s ease;
+  }
+  .price-card .select-btn:hover,
+  .price-card.selected .select-btn{
+    background:var(--forest);
+    color:#fff;
+  }
+
+  /* ---------- ORDER FORM ---------- */
+  .order-form{
+    padding:clamp(60px,9vw,110px) 0;
+  }
+  .order-form .form-wrap{
+    max-width:720px;
+    margin:0 auto;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:clamp(28px,5vw,52px);
+    box-shadow:0 30px 60px -34px rgba(30,51,39,0.35);
+  }
+  .order-form > .wrap > .eyebrow{ display:block; text-align:center; }
+  .order-form h2{
+    text-align:center;
+    font-size:clamp(1.8rem,3.2vw,2.3rem);
+    margin:12px auto 8px;
+  }
+  .order-form > .wrap > p.sub{
+    text-align:center;
+    color:#4A5A4E;
+    max-width:50ch;
+    margin:0 auto 40px;
+  }
+  .field-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+  }
+  .field{
+    margin-bottom:18px;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+  }
+  .field label{
+    font-size:0.82rem;
+    font-weight:700;
+    color:var(--forest);
+    letter-spacing:0.01em;
+  }
+  .field label .req{ color:var(--clay); }
+  .field input,
+  .field select,
+  .field textarea{
+    font-family:inherit;
+    font-size:0.96rem;
+    padding:13px 14px;
+    border-radius:12px;
+    border:1.5px solid var(--line);
+    background:var(--ivory);
+    color:var(--ink);
+    outline:none;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus{
+    border-color:var(--sage);
+    background:#fff;
+  }
+  .field textarea{ resize:vertical; min-height:80px; }
+
+  .package-select{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-bottom:8px;
+  }
+  .package-option{ position:relative; }
+  .package-option input{
+    position:absolute;
+    opacity:0;
+    width:100%; height:100%;
+    margin:0;
+    cursor:pointer;
+  }
+  .package-option .card{
+    border:1.5px solid var(--line);
+    border-radius:14px;
+    padding:14px 10px;
+    text-align:center;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .package-option .card .qty{
+    font-size:0.82rem;
+    font-weight:700;
+    color:var(--forest);
+    margin-bottom:4px;
+  }
+  .package-option .card .amt{
+    font-family:'Fraunces',serif;
+    font-size:1.15rem;
+    color:var(--forest);
+  }
+  .package-option input:checked + .card{
+    border-color:var(--clay);
+    background:rgba(201,122,92,0.08);
+  }
+  .package-option input:focus-visible + .card{
+    outline:2px solid var(--clay);
+    outline-offset:2px;
+  }
+
+  .order-total{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--ivory);
+    border-radius:14px;
+    padding:16px 20px;
+    margin:24px 0;
+  }
+  .order-total .label{
+    font-size:0.9rem;
+    font-weight:700;
+    color:var(--forest);
+  }
+  .order-total .value{
+    font-family:'Fraunces',serif;
+    font-size:1.5rem;
+    color:var(--clay);
+  }
+
+  .submit-btn{
+    width:100%;
+    background:var(--clay);
+    color:#fff;
+    border:none;
+    padding:17px 20px;
+    border-radius:999px;
+    font-size:1.02rem;
+    font-weight:700;
+    font-family:inherit;
+    cursor:pointer;
+    box-shadow:0 14px 28px -12px rgba(201,122,92,0.55);
+    transition:transform .25s ease;
+  }
+  .submit-btn:hover{ transform:translateY(-2px); }
+
+  .form-note{
+    font-size:0.8rem;
+    color:#6B7A6E;
+    text-align:center;
+    margin-top:16px;
+    line-height:1.6;
+  }
+  .form-status{
+    display:none;
+    margin-top:18px;
+    padding:14px 16px;
+    border-radius:12px;
+    font-size:0.9rem;
+    font-weight:600;
+  }
+  .form-status.show{ display:block; }
+  .form-status.ok{ background:#E4EEDE; color:#294A2A; }
+  .form-status.err{ background:#F6E1DA; color:#7A2E1A; }
+
+  @media (max-width:720px){
+    .field-row{ grid-template-columns:1fr; }
+    .price-grid{ grid-template-columns:1fr; }
+    .price-card.popular{ transform:none; }
+    .package-select{ grid-template-columns:1fr; }
+  }
+
   /* ---------- responsive ---------- */
   @media (max-width:920px){
     .hero .wrap{ grid-template-columns:1fr; }
@@ -499,7 +783,7 @@
       <svg class="leaf" viewBox="0 0 24 24" fill="none"><path d="M4 20C4 10 12 4 20 4C20 12 14 20 4 20Z" fill="#7C9473"/><path d="M4 20C8 16 12 12 20 4" stroke="#1E3327" stroke-width="1.2"/></svg>
       Zencolor
     </div>
-    <button class="nav-cta" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+    <button class="nav-cta" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'})">Shop Now</button>
   </div>
 </nav>
 
@@ -509,7 +793,7 @@
       <span class="eyebrow">Aloe Vera · Exfoliating Gel</span>
       <h1>Your skin isn't dirty.<br>It's just <em>buried.</em></h1>
       <p class="lede">Dead skin builds up faster than you'd think — dulling your glow, clogging your pores, and blocking every serum you apply after. One gentle gel-scrub clears the way.</p>
-      <button class="btn-primary" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">
+      <button class="btn-primary" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'})">
         Shop the Exfoliating Gel
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M9 3l5 5-5 5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
@@ -656,11 +940,176 @@
   </div>
 </section>
 
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <span class="eyebrow">Price list</span>
+    <h2>Choose your bundle</h2>
+    <p class="sub">The more tubes you stock up on, the more you save per tube. Prices in Naira, delivered nationwide.</p>
+
+    <div class="price-grid">
+      <div class="price-card" data-package="1" data-price="19500" data-label="1 Tube">
+        <div class="img-space">Product photo space<br>(1 tube)</div>
+        <div class="body">
+          <h3>Buy 1</h3>
+          <div class="unit-price">₦19,500 / tube</div>
+          <div class="amount">₦19,500</div>
+          <div class="save">&nbsp;</div>
+          <button type="button" class="select-btn">Select this</button>
+        </div>
+      </div>
+
+      <div class="price-card popular" data-package="2" data-price="29000" data-label="2 Tubes">
+        <span class="badge">Most popular</span>
+        <div class="img-space">Product photo space<br>(2 tubes)</div>
+        <div class="body">
+          <h3>Buy 2</h3>
+          <div class="unit-price">₦14,500 / tube</div>
+          <div class="amount">₦29,000</div>
+          <div class="save">Save ₦10,000</div>
+          <button type="button" class="select-btn">Select this</button>
+        </div>
+      </div>
+
+      <div class="price-card" data-package="3" data-price="40500" data-label="3 Tubes">
+        <div class="img-space">Product photo space<br>(3 tubes)</div>
+        <div class="body">
+          <h3>Buy 3</h3>
+          <div class="unit-price">₦13,500 / tube</div>
+          <div class="amount">₦40,500</div>
+          <div class="save">Save ₦18,000</div>
+          <button type="button" class="select-btn">Select this</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="order-form" id="orderForm">
+  <div class="wrap">
+    <span class="eyebrow">Place your order</span>
+    <h2>Complete your details</h2>
+    <p class="sub">Fill the form below. We'll confirm your order and send an invoice to your email.</p>
+
+    <div class="form-wrap">
+      <form id="orderFormEl" novalidate>
+        <div class="field-row">
+          <div class="field">
+            <label for="fullName">Full name <span class="req">*</span></label>
+            <input type="text" id="fullName" name="fullName" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email address <span class="req">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="phone">Phone number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="080...">
+          </div>
+          <div class="field">
+            <label for="altPhone">Alternative phone number</label>
+            <input type="tel" id="altPhone" name="altPhone" autocomplete="tel" placeholder="Optional">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="address">Delivery address <span class="req">*</span></label>
+          <textarea id="address" name="address" required autocomplete="street-address" placeholder="House number, street, area/city"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="state">State <span class="req">*</span></label>
+          <select id="state" name="state" required autocomplete="address-level1">
+            <option value="" disabled selected>Select your state</option>
+            <option>Abia</option>
+            <option>Adamawa</option>
+            <option>Akwa Ibom</option>
+            <option>Anambra</option>
+            <option>Bauchi</option>
+            <option>Bayelsa</option>
+            <option>Benue</option>
+            <option>Borno</option>
+            <option>Cross River</option>
+            <option>Delta</option>
+            <option>Ebonyi</option>
+            <option>Edo</option>
+            <option>Ekiti</option>
+            <option>Enugu</option>
+            <option>Gombe</option>
+            <option>Imo</option>
+            <option>Jigawa</option>
+            <option>Kaduna</option>
+            <option>Kano</option>
+            <option>Katsina</option>
+            <option>Kebbi</option>
+            <option>Kogi</option>
+            <option>Kwara</option>
+            <option>Lagos</option>
+            <option>Nasarawa</option>
+            <option>Niger</option>
+            <option>Ogun</option>
+            <option>Ondo</option>
+            <option>Osun</option>
+            <option>Oyo</option>
+            <option>Plateau</option>
+            <option>Rivers</option>
+            <option>Sokoto</option>
+            <option>Taraba</option>
+            <option>Yobe</option>
+            <option>Zamfara</option>
+            <option>FCT - Abuja</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Package <span class="req">*</span></label>
+          <div class="package-select" id="packageSelect">
+            <label class="package-option">
+              <input type="radio" name="package" value="1" data-price="19500" required>
+              <span class="card">
+                <span class="qty">Buy 1</span>
+                <span class="amt">₦19,500</span>
+              </span>
+            </label>
+            <label class="package-option">
+              <input type="radio" name="package" value="2" data-price="29000">
+              <span class="card">
+                <span class="qty">Buy 2</span>
+                <span class="amt">₦29,000</span>
+              </span>
+            </label>
+            <label class="package-option">
+              <input type="radio" name="package" value="3" data-price="40500">
+              <span class="card">
+                <span class="qty">Buy 3</span>
+                <span class="amt">₦40,500</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="order-total">
+          <span class="label">Total</span>
+          <span class="value" id="totalValue">₦0</span>
+        </div>
+
+        <button type="submit" class="submit-btn">Place order</button>
+
+        <div class="form-status" id="formStatus"></div>
+
+        <p class="form-note">Submitting opens your email app with your order pre-filled — addressed to us with a copy to you as your invoice. Just hit send to complete your order.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <section class="final" id="order">
   <div class="wrap">
     <h2>Ready for smoother, clearer-looking skin?</h2>
     <p>One tube. A few minutes, a couple times a week. That's the whole routine.</p>
-    <button class="btn-primary" style="background:var(--sage);box-shadow:0 10px 24px -10px rgba(124,148,115,0.6);">
+    <button class="btn-primary" style="background:var(--sage);box-shadow:0 10px 24px -10px rgba(124,148,115,0.6);" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'})">
       Shop Zencolor Aloe Vera Exfoliating Gel
     </button>
   </div>
@@ -787,6 +1236,106 @@
   productImg.onload = resize;
   resize();
   if(!reduceMotion) requestAnimationFrame(ambient);
+})();
+
+// ---- Price list <-> order form sync ----
+(function(){
+  const priceCards = document.querySelectorAll('.price-card');
+  const packageRadios = document.querySelectorAll('input[name="package"]');
+  const totalValue = document.getElementById('totalValue');
+  const orderForm = document.getElementById('orderFormEl');
+  const formStatus = document.getElementById('formStatus');
+
+  const naira = n => '₦' + Number(n).toLocaleString('en-NG');
+
+  function selectPackage(pkgValue){
+    packageRadios.forEach(r => { r.checked = (r.value === pkgValue); });
+    priceCards.forEach(c => c.classList.toggle('selected', c.dataset.package === pkgValue));
+    const active = document.querySelector('input[name="package"]:checked');
+    totalValue.textContent = active ? naira(active.dataset.price) : '₦0';
+  }
+
+  priceCards.forEach(card => {
+    card.querySelector('.select-btn').addEventListener('click', () => {
+      selectPackage(card.dataset.package);
+      document.getElementById('orderForm').scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  packageRadios.forEach(r => {
+    r.addEventListener('change', () => selectPackage(r.value));
+  });
+
+  // default selection: package 2 (most popular)
+  selectPackage('2');
+
+  // ---- Order submission: builds an invoice-style order and opens the
+  // customer's own email app addressed to us, with the customer CC'd
+  // as their invoice copy. A static page can't silently send email on
+  // its own without a backend service — this uses mailto so the order
+  // goes out through the customer's own mail client. ----
+  orderForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    formStatus.className = 'form-status';
+
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const altPhone = document.getElementById('altPhone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const state = document.getElementById('state').value;
+    const activePkg = document.querySelector('input[name="package"]:checked');
+
+    if(!fullName || !email || !phone || !address || !state || !activePkg){
+      formStatus.textContent = 'Please fill in all required fields before submitting.';
+      formStatus.classList.add('show','err');
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if(!emailPattern.test(email)){
+      formStatus.textContent = 'Please enter a valid email address.';
+      formStatus.classList.add('show','err');
+      return;
+    }
+
+    const pkgLabels = {1:'1 Tube', 2:'2 Tubes', 3:'3 Tubes'};
+    const pkgQty = activePkg.value;
+    const pkgPrice = Number(activePkg.dataset.price);
+    const orderRef = 'ZC-' + Date.now().toString().slice(-8);
+    const today = new Date().toLocaleDateString('en-NG', {year:'numeric', month:'long', day:'numeric'});
+
+    const body =
+`ZENCOLOR ALOE VERA EXFOLIATING GEL — ORDER / INVOICE
+Order ref: ${orderRef}
+Date: ${today}
+
+CUSTOMER DETAILS
+Name: ${fullName}
+Email: ${email}
+Phone: ${phone}
+Alternative phone: ${altPhone || 'N/A'}
+Delivery address: ${address}
+State: ${state}
+
+ORDER SUMMARY
+Package: ${pkgLabels[pkgQty]}
+Amount: ${naira(pkgPrice)}
+
+TOTAL DUE: ${naira(pkgPrice)}
+
+This email confirms your order details. The seller will reach out to
+confirm delivery and payment. Please keep this email as your order
+reference.`;
+
+    const subject = `New Order ${orderRef} — Zencolor Aloe Vera Gel (${pkgLabels[pkgQty]}) — ${fullName}`;
+    const mailto = `mailto:vc885222@gmail.com?cc=${encodeURIComponent(email)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+
+    formStatus.textContent = 'Your email app should now be open with your order pre-filled — press send to complete your order. A copy will go to your own email as your invoice.';
+    formStatus.classList.add('show','ok');
+  });
 })();
 
 // ---- FAQ accordion ----
