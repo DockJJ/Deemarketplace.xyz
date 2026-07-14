@@ -991,9 +991,10 @@
     <p class="sub">Fill the form below. We'll confirm your order and send an invoice to your email.</p>
 
     <div class="form-wrap">
-      <form id="orderFormEl" novalidate action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form id="orderFormEl" novalidate action="https://formsubmit.co/vc885@gmail.com" method="POST">
         <input type="hidden" name="_next" value="https://deemarketplace.xyz/Thankyou/">
         <input type="hidden" name="_subject" value="New Zencolor order">
+        <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_replyto" id="replyToField">
         <input type="hidden" name="Order Reference" id="orderRefField">
         <input type="hidden" name="Package" id="packageLabelField">
@@ -1275,9 +1276,8 @@
   // default selection: package 2 (most popular)
   selectPackage('2');
 
-  // ---- Order submission: the form POSTs directly to Formspree, which
-  // emails the order to the address registered on the Formspree account
-  // (set that up as vc885@gmail.com) and then redirects the customer's
+  // ---- Order submission: the form POSTs directly to FormSubmit, which
+  // emails the order to vc885@gmail.com and then redirects the customer's
   // browser to the thank-you page via the _next field. No email client
   // popup, no manual "send" step. ----
   orderForm.addEventListener('submit', function(e){
