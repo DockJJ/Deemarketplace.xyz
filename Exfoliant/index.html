@@ -991,7 +991,13 @@
     <p class="sub">Fill the form below. We'll confirm your order and send an invoice to your email.</p>
 
     <div class="form-wrap">
-      <form id="orderFormEl" novalidate>
+      <form id="orderFormEl" novalidate action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_next" value="https://deemarketplace.xyz/Thankyou/">
+        <input type="hidden" name="_subject" value="New Zencolor order">
+        <input type="hidden" name="_replyto" id="replyToField">
+        <input type="hidden" name="Order Reference" id="orderRefField">
+        <input type="hidden" name="Package" id="packageLabelField">
+        <input type="hidden" name="Total (NGN)" id="totalField">
         <div class="field-row">
           <div class="field">
             <label for="fullName">Full name <span class="req">*</span></label>
@@ -1099,7 +1105,7 @@
 
         <div class="form-status" id="formStatus"></div>
 
-        <p class="form-note">Submitting opens your email app with your order pre-filled — addressed to us with a copy to you as your invoice. Just hit send to complete your order.</p>
+        <p class="form-note">Submitting sends your order automatically — no email app required. You'll be redirected to a confirmation page.</p>
       </form>
     </div>
   </div>
@@ -1269,24 +1275,23 @@
   // default selection: package 2 (most popular)
   selectPackage('2');
 
-  // ---- Order submission: builds an invoice-style order and opens the
-  // customer's own email app addressed to us, with the customer CC'd
-  // as their invoice copy. A static page can't silently send email on
-  // its own without a backend service — this uses mailto so the order
-  // goes out through the customer's own mail client. ----
+  // ---- Order submission: the form POSTs directly to Formspree, which
+  // emails the order to the address registered on the Formspree account
+  // (set that up as vc885@gmail.com) and then redirects the customer's
+  // browser to the thank-you page via the _next field. No email client
+  // popup, no manual "send" step. ----
   orderForm.addEventListener('submit', function(e){
-    e.preventDefault();
     formStatus.className = 'form-status';
 
     const fullName = document.getElementById('fullName').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
-    const altPhone = document.getElementById('altPhone').value.trim();
     const address = document.getElementById('address').value.trim();
     const state = document.getElementById('state').value;
     const activePkg = document.querySelector('input[name="package"]:checked');
 
     if(!fullName || !email || !phone || !address || !state || !activePkg){
+      e.preventDefault();
       formStatus.textContent = 'Please fill in all required fields before submitting.';
       formStatus.classList.add('show','err');
       return;
@@ -1294,6 +1299,7 @@
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if(!emailPattern.test(email)){
+      e.preventDefault();
       formStatus.textContent = 'Please enter a valid email address.';
       formStatus.classList.add('show','err');
       return;
@@ -1303,38 +1309,15 @@
     const pkgQty = activePkg.value;
     const pkgPrice = Number(activePkg.dataset.price);
     const orderRef = 'ZC-' + Date.now().toString().slice(-8);
-    const today = new Date().toLocaleDateString('en-NG', {year:'numeric', month:'long', day:'numeric'});
 
-    const body =
-`ZENCOLOR ALOE VERA EXFOLIATING GEL — ORDER / INVOICE
-Order ref: ${orderRef}
-Date: ${today}
+    document.getElementById('replyToField').value = email;
+    document.getElementById('orderRefField').value = orderRef;
+    document.getElementById('packageLabelField').value = `${pkgLabels[pkgQty]} — ${naira(pkgPrice)}`;
+    document.getElementById('totalField').value = naira(pkgPrice);
 
-CUSTOMER DETAILS
-Name: ${fullName}
-Email: ${email}
-Phone: ${phone}
-Alternative phone: ${altPhone || 'N/A'}
-Delivery address: ${address}
-State: ${state}
-
-ORDER SUMMARY
-Package: ${pkgLabels[pkgQty]}
-Amount: ${naira(pkgPrice)}
-
-TOTAL DUE: ${naira(pkgPrice)}
-
-This email confirms your order details. The seller will reach out to
-confirm delivery and payment. Please keep this email as your order
-reference.`;
-
-    const subject = `New Order ${orderRef} — Zencolor Aloe Vera Gel (${pkgLabels[pkgQty]}) — ${fullName}`;
-    const mailto = `mailto:vc885222@gmail.com?cc=${encodeURIComponent(email)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailto;
-
-    formStatus.textContent = 'Your email app should now be open with your order pre-filled — press send to complete your order. A copy will go to your own email as your invoice.';
+    formStatus.textContent = 'Sending your order…';
     formStatus.classList.add('show','ok');
+    // form now submits normally to the action URL above
   });
 })();
 
