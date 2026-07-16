@@ -201,6 +201,143 @@
   }
   .problem-grid p strong{ color:#fff; }
 
+  /* ---------- REASONS ---------- */
+  .reasons {
+    background: #ffffff;
+    padding: clamp(60px, 9vw, 110px) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .reasons h2 {
+    font-family: 'Public Sans', 'Segoe UI', system-ui, sans-serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--forest);
+    margin-bottom: 48px;
+    letter-spacing: 0.03em;
+    line-height: 1.25;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .reasons-list {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .reason-card {
+    position: relative;
+    border-radius: 16px;
+    padding: clamp(24px, 5vw, 44px);
+    padding-left: clamp(30px, 6vw, 50px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--bg);
+    overflow: hidden;
+  }
+  .reason-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 6px;
+    background: var(--accent);
+  }
+  .reason-card-1 {
+    --accent: #E26D45;
+    --bg: #FFF9F6;
+  }
+  .reason-card-2 {
+    --accent: #3F75E3;
+    --bg: #F4F7FC;
+  }
+  .reason-card-3 {
+    --accent: #2B8C58;
+    --bg: #F2F8F5;
+  }
+  .reason-meta {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .reason-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: var(--forest);
+    text-transform: uppercase;
+    margin: 0 0 4px 0;
+  }
+  .reason-card p {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    color: #2E3A32;
+    margin: 0;
+  }
+  .reason-card p strong {
+    color: var(--forest);
+    font-weight: 700;
+  }
+  .reason-card ul {
+    margin: 8px 0;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style-type: disc;
+  }
+  .reason-card li {
+    font-size: 1.02rem;
+    line-height: 1.55;
+    color: #2E3A32;
+  }
+  .reason-card li strong {
+    color: var(--forest);
+    font-weight: 700;
+  }
+  .reason-quote {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: clamp(16px, 3vw, 20px) clamp(16px, 4vw, 24px);
+    display: flex;
+    align-items: flex-start;
+    gap: clamp(10px, 2vw, 14px);
+    margin-top: 12px;
+    box-shadow: 0 4px 12px rgba(30, 51, 39, 0.03);
+  }
+  .reason-quote .quote-icon {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .reason-quote .quote-text {
+    margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: #3B4A3F;
+    font-style: italic;
+  }
+  .reason-quote .quote-author {
+    display: inline;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--sage);
+    white-space: nowrap;
+  }
+
   /* ---------- INTRO / PRODUCT ---------- */
   .intro{
     padding:clamp(60px,9vw,110px) 0;
@@ -970,6 +1107,68 @@
     <div class="problem-grid">
       <p>You wash your face. You moisturize. You do everything <strong>"right."</strong> And your skin still looks flat, rough, uneven — like something's sitting on top of it.</p>
       <p>That's because something is. Dead skin cells build an invisible layer that dulls your glow and stops your moisturizer from ever really sinking in. <strong>You don't need to strip your skin with acids to fix this</strong> — you need to gently lift what's already dead.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reasons">
+  <div class="wrap">
+    <h2>The 3 Real Reasons Your Skin Looks Dull, Uneven &amp; Spotted</h2>
+    <div class="reasons-list">
+      <!-- Card 1 -->
+      <div class="reason-card reason-card-1">
+        <span class="reason-meta">Reason #1</span>
+        <h3>Dead skin cells are sitting on your face right now</h3>
+        <p>Your skin naturally sheds dead cells every day. But here's what nobody tells you: those dead cells don't always fall off. They pile up on the surface of your skin, forming an invisible barrier that:</p>
+        <ul>
+          <li>Blocks your natural glow from showing through</li>
+          <li>Makes your skin look grey, ashy and flat – even when you're not sick or tired</li>
+          <li>Stops your moisturizer and serums from actually absorbing into your skin</li>
+          <li>Makes your pores look bigger than they actually are</li>
+          <li>Causes your foundation to sit on top of your skin instead of blending in</li>
+        </ul>
+        <div class="reason-quote">
+          <span class="quote-icon">🗣️</span>
+          <p class="quote-text">
+            "My skin always looked grey and flat no matter what I used. I didn't know it was dead skin blocking everything" <span class="quote-author">— Funmi, Abuja</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="reason-card reason-card-2">
+        <span class="reason-meta">Reason #2</span>
+        <h3>Every pimple you've ever had left a dark mark behind</h3>
+        <p>You get a pimple. It heals. And then... a dark spot appears in its place. Sometimes darker than the original pimple itself.</p>
+        <p>This is called <strong>Post-Inflammatory Hyperpigmentation (PIH)</strong> – and it affects melanin-rich skin far more intensely than any other skin type. It's not your fault. It's biology.</p>
+        <p>But here's the painful part: without the right product, these spots can sit on your face for <strong>months. Even years.</strong></p>
+        <p>That dark patch on your cheek from 2022? Still there. The mark near your chin? Still visible under foundation. The uneven tone across your forehead? Still staring back at you in the mirror every morning.</p>
+        <div class="reason-quote">
+          <span class="quote-icon">🗣️</span>
+          <p class="quote-text">
+            "I healed from my breakout but the dark spots stayed for almost two years. I started thinking my skin was just going to look like that forever" <span class="quote-author">— Ngozi, Port Harcourt</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="reason-card reason-card-3">
+        <span class="reason-meta">Reason #3</span>
+        <h3>The products you're using were not made for your skin</h3>
+        <p>Most skincare products on the Nigerian market fall into two dangerous categories:</p>
+        <ul>
+          <li><strong>Imported Western/Korean brands</strong> – formulated for lighter skin tones, often too harsh for melanin-rich skin, and frequently fake by the time they reach Nigeria.</li>
+          <li><strong>Bleaching creams and whitening soaps</strong> – which give a temporary result, then make your skin worse than when you started.</li>
+        </ul>
+        <p>Neither solves the problem. Both waste your money. And bleaching creams can permanently damage the skin you were born with.</p>
+        <p>What your skin actually needs is <strong>gentle, enzyme-based exfoliation designed for melanin-rich skin</strong> – something that lifts what's blocking your glow, fades what the pimples left behind, and brightens using vitamins – not chemicals that strip.</p>
+        <div class="reason-quote">
+          <span class="quote-icon">🗣️</span>
+          <p class="quote-text">
+            "I was going crazy using so many creams that people said would fix it. Nothing worked until I stopped looking for something to whiten me and started looking for something to actually fix my skin." <span class="quote-author">— Amaka, Lagos</span>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
