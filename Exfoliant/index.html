@@ -754,6 +754,162 @@
     .package-select{ grid-template-columns:1fr; }
   }
 
+  /* ---------- REVIEWS ---------- */
+  .reviews{
+    padding:clamp(60px,9vw,110px) 0;
+    background:var(--paper);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .reviews-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-bottom:40px;
+  }
+  .reviews-head h2{
+    font-size:clamp(1.8rem,3.2vw,2.4rem);
+    margin-top:8px;
+  }
+  .reviews-summary{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .reviews-summary .avg{
+    font-family:'Fraunces',serif;
+    font-size:2.2rem;
+    color:var(--forest);
+    line-height:1;
+  }
+  .reviews-summary .meta{
+    font-size:0.85rem;
+    color:#5A6A5D;
+    line-height:1.4;
+  }
+  .stars{
+    display:inline-flex;
+    gap:2px;
+  }
+  .stars svg{ width:16px; height:16px; }
+  .reviews-summary .stars svg{ width:20px; height:20px; }
+
+  .review-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+    margin-bottom:36px;
+    min-height:180px;
+  }
+  .review-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px 24px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    animation:fadeIn .35s ease;
+  }
+  @keyframes fadeIn{
+    from{ opacity:0; transform:translateY(6px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  .review-card .row-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+  }
+  .review-card .verified{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    font-size:0.72rem;
+    font-weight:700;
+    color:var(--sage);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  .review-card .verified svg{ width:13px; height:13px; }
+  .review-card p.text{
+    font-size:0.95rem;
+    line-height:1.65;
+    color:#3B4A3F;
+    margin:0;
+    flex:1;
+  }
+  .review-card .reviewer{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-top:4px;
+  }
+  .review-card .avatar{
+    width:32px; height:32px;
+    border-radius:50%;
+    background:var(--sage-light);
+    color:var(--forest);
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:0.9rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex:none;
+  }
+  .review-card .reviewer-name{
+    font-size:0.88rem;
+    font-weight:700;
+    color:var(--forest);
+  }
+
+  /* pagination, styled to match a simple numbered nav */
+  .review-pagination{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:4px;
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:10px;
+    padding:6px;
+    width:fit-content;
+    margin:0 auto;
+  }
+  .review-pagination button{
+    font-family:inherit;
+    font-size:0.9rem;
+    font-weight:700;
+    color:#4A5A4E;
+    background:none;
+    border:none;
+    min-width:34px;
+    height:34px;
+    border-radius:7px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background .2s ease, color .2s ease;
+  }
+  .review-pagination button:hover{ background:var(--ivory); }
+  .review-pagination button.active{
+    background:var(--forest);
+    color:#fff;
+  }
+  .review-pagination button:disabled{
+    opacity:0.35;
+    cursor:default;
+  }
+  .review-pagination button:disabled:hover{ background:none; }
+
+  @media (max-width:720px){
+    .review-grid{ grid-template-columns:1fr; }
+  }
+
   /* ---------- responsive ---------- */
   @media (max-width:920px){
     .hero .wrap{ grid-template-columns:1fr; }
@@ -912,6 +1068,41 @@
   </div>
 </section>
 
+<section class="reviews">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div>
+        <span class="eyebrow">Customer reviews</span>
+        <h2>What people are saying</h2>
+      </div>
+      <div class="reviews-summary">
+        <div class="avg">4.8</div>
+        <div>
+          <div class="stars" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="#C9A227"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#C9A227"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#C9A227"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#C9A227"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg>
+            <svg viewBox="0 0 20 20" fill="#C9A227"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg>
+          </div>
+          <div class="meta">Based on 6 customer reviews</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-grid" id="reviewGrid"></div>
+
+    <div class="review-pagination" id="reviewPagination">
+      <button type="button" id="reviewPrev" aria-label="Previous page">‹</button>
+      <button type="button" data-page="1">1</button>
+      <button type="button" data-page="2">2</button>
+      <button type="button" data-page="3">3</button>
+      <button type="button" id="reviewNext" aria-label="Next page">›</button>
+      <button type="button" id="reviewLast" aria-label="Last page">»|</button>
+    </div>
+  </div>
+</section>
+
 <section class="faq">
   <div class="wrap" style="padding:0;">
     <span class="eyebrow" style="display:block;text-align:center;">Questions</span>
@@ -991,7 +1182,7 @@
     <p class="sub">Fill the form below. We'll confirm your order and send an invoice to your email.</p>
 
     <div class="form-wrap">
-      <form id="orderFormEl" novalidate action="https://formsubmit.co/vc885222@gmail.com" method="POST">
+      <form id="orderFormEl" novalidate action="https://formsubmit.co/vc885@gmail.com" method="POST">
         <input type="hidden" name="_next" value="https://deemarketplace.xyz/Thankyou/">
         <input type="hidden" name="_subject" value="New Zencolor order">
         <input type="hidden" name="_captcha" value="false">
@@ -1319,6 +1510,75 @@
     formStatus.classList.add('show','ok');
     // form now submits normally to the action URL above
   });
+})();
+
+// ---- Customer reviews pagination ----
+(function(){
+  const reviews = [
+    { name:"Fatima", rating:5, text:"The gel is made with simple ingredients, but my promise to you is that you will see results. Definitely recommended." },
+    { name:"Tolani", rating:5, text:"I have sensitive skin and now I'm using the third tube. It is natural, no irritation, no dryness, and leaves my skin moisturized." },
+    { name:"Chi Amanda", rating:4, text:"Leaves my skin super soft and feeling really clean. I'm hoping over time it will fade my dark spots." },
+    { name:"Afiong", rating:5, text:"I've now bought this product again and again. It forms nicely and is super light! I dig it." },
+    { name:"Pink Terry", rating:5, text:"As an African American woman, I have had difficulty finding products to suit my skin. Plus, many of the ingredients in newer products I'm allergic to. This brand exceeded my expectations. You only need a little to get a nice cleanse, and then I put on the gel to keep from over drying my skin." },
+    { name:"Elizabeth", rating:4, text:"Feels nice, clean and tingly on the skin, but if you have sensitive skin I'd try a small amount first to see how it reacts — my skin was a little red and irritated after, but that's just my skin. Overall a good product." }
+  ];
+
+  const perPage = 2;
+  const totalPages = Math.ceil(reviews.length / perPage);
+  let currentPage = 1;
+
+  const grid = document.getElementById('reviewGrid');
+  const pagButtons = document.querySelectorAll('#reviewPagination button[data-page]');
+  const prevBtn = document.getElementById('reviewPrev');
+  const nextBtn = document.getElementById('reviewNext');
+  const lastBtn = document.getElementById('reviewLast');
+
+  const starIcon = filled => `<svg viewBox="0 0 20 20" fill="${filled ? '#C9A227' : '#E3E0D2'}"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg>`;
+
+  function initials(name){
+    return name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+  }
+
+  function render(){
+    const start = (currentPage - 1) * perPage;
+    const pageItems = reviews.slice(start, start + perPage);
+
+    grid.innerHTML = pageItems.map(r => `
+      <div class="review-card">
+        <div class="row-top">
+          <div class="stars">${[1,2,3,4,5].map(i => starIcon(i <= r.rating)).join('')}</div>
+          <span class="verified">
+            <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#7C9473"/><path d="M4.5 8.2l2.3 2.3L11.5 5.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Verified Purchase
+          </span>
+        </div>
+        <p class="text">${r.text}</p>
+        <div class="reviewer">
+          <span class="avatar">${initials(r.name)}</span>
+          <span class="reviewer-name">${r.name}</span>
+        </div>
+      </div>
+    `).join('');
+
+    pagButtons.forEach(btn => {
+      btn.classList.toggle('active', Number(btn.dataset.page) === currentPage);
+    });
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+    lastBtn.disabled = currentPage === totalPages;
+  }
+
+  pagButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentPage = Number(btn.dataset.page);
+      render();
+    });
+  });
+  prevBtn.addEventListener('click', () => { if(currentPage > 1){ currentPage--; render(); } });
+  nextBtn.addEventListener('click', () => { if(currentPage < totalPages){ currentPage++; render(); } });
+  lastBtn.addEventListener('click', () => { currentPage = totalPages; render(); });
+
+  render();
 })();
 
 // ---- FAQ accordion ----
